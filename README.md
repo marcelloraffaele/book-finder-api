@@ -48,3 +48,25 @@ curl -X get "http://localhost:5097/Books"
 curl -x GET http://localhost:5097/swagger/v1/swagger.json
 ```
 
+## Prompt used to create this code with GitHub Copilot
+```powershell
+create the following apis: 
+- search by title
+- get all books
+- get by id
+- get by author
+
+- add book.
+
+Add a service class that must be testable by junit test. create also junit test
+```
+
+other prompt that can be used:
+```powershell
+update the api adding book changes, book delete. update also test
+
+create a github actions to build this project and run test
+
+create a github codespace file for this project
+```
+
