@@ -63,7 +63,9 @@ Add a service class that must be testable by junit test. create also junit test
 
 other prompt that can be used:
 ```powershell
-update the api adding book changes, book delete. update also test
+update the api adding book changes, book delete
+
+/tests
 
 create a github actions to build this project and run test
 
