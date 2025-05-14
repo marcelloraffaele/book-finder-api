@@ -81,12 +81,22 @@ Develop the following points:
 ```
 - Prompt 2
 ```
-Create a file `test.ps1` containing a powershell script that can be used in order to test all the created API.
+Create a file `test.ps1` containing a powershell script that can be used in order to test all the created API. In detail the script must:
+1. Create 10 new book, choose random values for each field.
+2. Get all the books and check that the number of books is 10.
+3. Create a for loop that will get all books using the id and check that the book is the same as the one created.
+4. Create a for loop that will get all books using the title and check that the book is the same as the one created.
+5. Create a for loop that will delete all books using the id and check that the book is not present anymore.
+Add some logs to the script in order to see what it is doing.
 ```
 - Prompt 3
 
 ```
-create a github actions to build this project and run test
-create a github codespace file for this project
+creatre a docker file for this project
+create a github actions to build this project, run test and publish the docker image into the GitHub registry
+```
+- Prompt 4
+```
+create a github codespace file for this project using all the necessary tools to run the project and test it. Add also the GitHub Copilot extension.
 ```
 
