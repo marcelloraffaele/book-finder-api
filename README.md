@@ -26,30 +26,31 @@ get
 ```
 
 ## test with curl
-```
-curl -X POST "http://localhost:5097/Books" -H "Content-Type: application/json" -d '{
-  "id": 1,
-  "title": "Sample Book Title",
-  "author": "Sample Author",
-  "isbn": "123-4567890123",
-  "publisher": "Sample Publisher",
-  "publishedDate": "2025-02-24T00:00:00",
-  "genre": "Sample Genre",
-  "pageCount": 300,
-  "language": "English",
-  "description": "Sample book description."
-}'
+```powershell
+# POST a new book
+$body = @{
+    id = 1
+    title = "Sample Book Title"
+    author = "Sample Author"
+    isbn = "123-4567890123"
+    publisher = "Sample Publisher"
+    publishedDate = "2025-02-24T00:00:00"
+    genre = "Sample Genre"
+    pageCount = 300
+    language = "English"
+    description = "Sample book description."
+} | ConvertTo-Json
+Invoke-RestMethod -Uri "http://localhost:5097/Books" -Method Post -ContentType "application/json" -Body $body
 
-###
-curl -X get "http://localhost:5097/Books" 
-  -H "Content-Type: application/json"
-  
-###
-curl -x GET http://localhost:5097/swagger/v1/swagger.json
+# GET all books
+Invoke-RestMethod -Uri "http://localhost:5097/Books" -Method Get -ContentType "application/json" | ConvertTo-Json
+
+# GET swagger JSON
+Invoke-RestMethod -Uri "http://localhost:5097/swagger/v1/swagger.json" -Method Get | ConvertTo-Json
 ```
 
 ## Prompt used to create this code with GitHub Copilot
-```powershell
+```
 create the following apis: 
 - search by title
 - get all books
@@ -62,7 +63,7 @@ Add a service class that must be testable by junit test. create also junit test
 ```
 
 other prompt that can be used:
-```powershell
+```
 update the api adding book changes, book delete
 
 /tests
