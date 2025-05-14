@@ -26,6 +26,15 @@ get
 ```
 
 ## test with curl
+```
+curl -X POST "http://localhost:5097/Books" -H "Content-Type: application/json" -d '{ "id": 1, "title": "Sample Book Title", "author": "Sample Author", "isbn": "123-4567890123", "publisher": "Sample Publisher", "publishedDate": "2025-02-24T00:00:00", "genre": "Sample Genre", "pageCount": 300, "language": "English", "description": "Sample book description." }'
+
+curl -X get "http://localhost:5097/Books" -H "Content-Type: application/json"
+
+curl -x GET http://localhost:5097/swagger/v1/swagger.json
+```
+
+## test with Powershell Invoke-RestMethod
 ```powershell
 # POST a new book
 $body = @{
@@ -62,14 +71,22 @@ create the following apis:
 Add a service class that must be testable by junit test. create also junit test
 ```
 
-other prompt that can be used:
+## other prompt:
+- Prompt 1
 ```
-update the api adding book changes, book delete
+Develop the following points:
+1. Update the API adding book changes, book delete and get book by IBAN.
+2. Update all the test and exec the test. If any test fail, fix it and run again the test.
+3. Create a file `client.http` containing a list of `curl` that can be used in order to test all the created API.
+```
+- Prompt 2
+```
+Create a file `test.ps1` containing a powershell script that can be used in order to test all the created API.
+```
+- Prompt 3
 
-/tests
-
+```
 create a github actions to build this project and run test
-
 create a github codespace file for this project
 ```
 
